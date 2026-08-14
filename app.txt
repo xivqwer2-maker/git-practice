@@ -1,5 +1,2 @@
 hello
 This is my second line
-temporary line
-this is temp 2
-temorary commit
