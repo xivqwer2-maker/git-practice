@@ -14,7 +14,14 @@ jobs:
       - name: Show files
         run: ls -la
 
-      - name: Run basic test
-        run: |
-          test -f app.txt
-          echo "CI test passed"
+      - name: Build
+        run: ./build.sh
+
+      - name: Test
+        run: test -f build/app.txt
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          path: build/
