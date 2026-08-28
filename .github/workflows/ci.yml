@@ -1,20 +1,20 @@
-name: ci-practice-git
+name: Git Practice CI
 
 on:
-    push:
+  push:
 
 jobs:
-      build:
-            runs-on:ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-      steps:
-           - name: Checkout code
-             uses: actions/checkout@v4
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-           - name: show files
-             run: ls -la
+      - name: Show files
+        run: ls -la
 
-           - name: Run basic text
-             run: |
-               test -f app.txt
-               echo "CI test passed"
+      - name: Run basic test
+        run: |
+          test -f app.txt
+          echo "CI test passed"
